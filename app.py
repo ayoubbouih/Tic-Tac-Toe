@@ -19,7 +19,6 @@ def game_state():
             return 1
         #diagonals
         if x == 1:
-            if all([matrix[x][x] = matrix[y][y] for):
             if matrix[0][0] == matrix[x][x] and  matrix[2][2] == matrix[x][x] and matrix[x][x] in symbols:
                 print(matrix[x][x],"wins")
                 return 1
