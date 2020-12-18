@@ -25,9 +25,9 @@ def game_state():
     return 0
 afficher()
 while len(blanks) > 0:
-    z = input("Enter the coordinates:")
+    z = input("Enter the coordinates: e.x: 1,1")
     if z.split()[0].isnumeric() and z.split()[1].isnumeric():
-        x,y = int(z.split()[0]), int(z.split()[1])
+        x,y = int(z.split(",")[0]), int(z.split(",")[1])
         if 1 <= x <= 3 and 1 <= y <= 3:
             if (x,y) in blanks:
                 blanks.remove((x,y))
