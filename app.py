@@ -9,15 +9,12 @@ def afficher():
     print("---------")
 def game_state():
     for x in range(0, len(matrix)):
-        #rows
         if all([matrix[0][x] == matrix[x][y] for y in range(len(matrix))]) and matrix[0][x] in symbols:
             print(matrix[0][x],"wins")
             return 1
-        #cols
         if all([matrix[x][0] == matrix[y][x] for y in range(len(matrix))]) and matrix[x][0] in symbols:
             print(matrix[x][0],"wins")
             return 1
-        #diagonals
         if x == 1:
             if matrix[0][0] == matrix[x][x] and  matrix[2][2] == matrix[x][x] and matrix[x][x] in symbols:
                 print(matrix[x][x],"wins")
@@ -29,11 +26,8 @@ def game_state():
 afficher()
 while len(blanks) > 0:
     z = input("Enter the coordinates:")
-    x = z.split()[0]
-    y = z.split()[1]
-    if x.isnumeric() and y.isnumeric():
-        x = int(x)
-        y = int(y)
+    if z.split()[0].isnumeric() and z.split()[1].isnumeric():
+        x,y = int(z.split()[0]), int(z.split()[1])
         if 1 <= x <= 3 and 1 <= y <= 3:
             if (x,y) in blanks:
                 blanks.remove((x,y))
